@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)file:///C:/Users/Ramadan/Downloads/links.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2Shot Caffee</title>
+<style>
+  @font-face { font-family: 'Tajawal'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/tajawal/v12/Iura6YBj_oCad4k1nzSBC45I.woff2) format('woff2'); unicode-range: U+0600-06FF, U+0750-077F, U+FB50-FDFF, U+FE70-FEFC; }
+  @font-face { font-family: 'Tajawal'; font-style: normal; font-weight: 400; font-display: swap; src: url(https://fonts.gstatic.com/s/tajawal/v12/Iura6YBj_oCad4k1nzGBCw.woff2) format('woff2'); unicode-range: U+0000-00FF; }
+  @font-face { font-family: 'Tajawal'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l4qkHrRpiYlJ.woff2) format('woff2'); unicode-range: U+0600-06FF; }
+  @font-face { font-family: 'Tajawal'; font-style: normal; font-weight: 700; font-display: swap; src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l4qkHrFpiQ.woff2) format('woff2'); unicode-range: U+0000-00FF; }
+  @font-face { font-family: 'Tajawal'; font-style: normal; font-weight: 900; font-display: swap; src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l7KmHrRpiYlJ.woff2) format('woff2'); unicode-range: U+0600-06FF; }
+  @font-face { font-family: 'Tajawal'; font-style: normal; font-weight: 900; font-display: swap; src: url(https://fonts.gstatic.com/s/tajawal/v12/Iurf6YBj_oCad4k1l7KmHrFpiQ.woff2) format('woff2'); unicode-range: U+0000-00FF; }
+
+  :root {
+    --bg: #0E0E0E;
+    --accent: #2ECC71;
+    --dark-green: #1A4D35;
+    --mid-green: #2A7A4A;
+    --white: #FFFFFF;
+    --muted: #888888;
+    --card-bg: #141414;
+    --card-border: rgba(46,204,113,0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--bg);
+    font-family: 'Tajawal', sans-serif;
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+  }
+
+  /* Animated background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 30% 20%, rgba(46,204,113,0.08) 0%, transparent 55%),
+      radial-gradient(ellipse at 75% 80%, rgba(26,77,53,0.12) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(46,204,113,0.03) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 420px;
+    padding: 48px 24px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Logo */
+  .logo-wrap {
+    margin-bottom: 6px;
+    animation: fadeDown 0.7s ease both;
+  }
+  .logo-wrap img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+    filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255,255,255,0.5)) drop-shadow(0 0 22px rgba(255,255,255,0.3));
+  }
+
+  /* Brand name */
+  .brand-name {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3), 0 0 40px rgba(46,204,113,0.2);
+    animation: fadeDown 0.7s 0.1s ease both;
+    margin-bottom: 4px;
+  }
+
+  .brand-sub {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--accent);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    opacity: 0.85;
+    animation: fadeDown 0.7s 0.15s ease both;
+    margin-bottom: 32px;
+  }
+
+  /* Divider */
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-bottom: 28px;
+    animation: fadeDown 0.7s 0.2s ease both;
+  }
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(46,204,113,0.5), transparent);
+  }
+  .divider-diamond {
+    width: 6px;
+    height: 6px;
+    background: var(--accent);
+    transform: rotate(45deg);
+    box-shadow: 0 0 8px rgba(46,204,113,0.7);
+  }
+
+  /* Links */
+  .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .link-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #111111, #1a2e1f);
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    text-decoration: none;
+    color: var(--white);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.5s ease forwards;
+  }
+
+  .link-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--dark-green), var(--accent));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 24px rgba(46,204,113,0.35);
+    transform: translateY(-2px);
+  }
+  .link-card:hover::before { opacity: 1; }
+  .link-card:hover .link-title,
+  .link-card:hover .link-desc,
+  .link-card:hover .link-icon { color: #000; }
+
+  .link-card:nth-child(1) { animation-delay: 0.25s; }
+  .link-card:nth-child(2) { animation-delay: 0.35s; }
+  .link-card:nth-child(3) { animation-delay: 0.45s; }
+  .link-card:nth-child(4) { animation-delay: 0.55s; }
+  .link-card:nth-child(5) { animation-delay: 0.65s; }
+
+  .link-left {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .link-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+  }
+
+  .link-desc {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+
+  .link-icon {
+    font-size: 20px;
+    color: var(--accent);
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+    width: 28px;
+    text-align: center;
+  }
+
+  /* SVG icons */
+  .link-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 36px;
+    text-align: center;
+    animation: fadeUp 0.5s 0.75s ease both;
+    opacity: 0;
+  }
+  .footer-text {
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 2px;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- Logo -->
+  <div class="logo-wrap">
+    <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNjg0LjU0IDE1NzcuMTYiPgogIDxwYXRoIGQ9Ik0zODcuNDcsMTQ3MC4xNGMtLjU1LDEuMzMtMi41NiwxLjU2LTUuMzIsMi4yNC0zLjU5LjcxLTcuNjcsMS4xOS0xMS4zOCwxLjYtNzguOTIsOS44MS0xMzQuODQsMTQuNTUtMjA5LjQ5LDMyLjM5LTEwLjIxLDIuODEtMTguNjQsNS44Mi0yMy45LDguOTgtNi43MSw0LjAzLTguMjcsOC4zMy0xLjgxLDEyLjc5LDEwNy4xMiwzNi43NSwyNzQuOTUsMzMuMiwzNzUuODEsNDIuNjksMjAyLjc0LDEwLjk1LDM1Ni41OCw4LDUyNy4zNS0xMS43OSw0NC42My03LjAzLDE2My43Ny0xMC41OCwxODkuMzctNDEuNjUtMjkuNTQtMzQuNjgtMTc3Ljc3LTM1LjIyLTI0My4xLTQ4LjkyLTcuNzMtNC4wNiwxMi4zLTEyLjY5LDE1LjE4LTE1LjQ1LDQ4Ljk1LTMxLjc3LDkyLjY3LTcyLjM4LDEyNy45OS0xMTguNzQsNS4xMS02LjMsOS4xNy0xMy42MiwxNS42OS0xOC41MiwxODcuNzMtMjEuOTMsMzkzLjEyLTk1LjI5LDUxMC4wNC0yNTUuODgsNDUuMjktNzguMzEsNDIuNjktMTk0LjIzLTIzLjI4LTI2MS43Ni0yOC44OC0zMC45NC03Ni44My00OC44Ny0xMjAuMjQtNTEuOTEtMjcuMTktMS41Ny03Ni4wNy0xLjg2LTc4LjY5LDEwLjU0LTcuNjEsMjYuNDItMTQuMDYsNTMuMzEtMjAuMzEsODAuMDktNC4yNywxNC45OSw4LjM2LDEzLjQsMTguMzQsMTAuODIsNDAuMDYtOC45Myw4OC4yOC0zLjY2LDExNi44NCwyOC40NSw4OC43OCwxMjMuNjQtMTAwLjc3LDIzOC4xMS0yMDYuMTksMjgwLjY4LTI2LjA3LDkuNzYtNzkuMjcsMzAuMzUtOTYuNjUsMjcuOTYtNC43My0xLjQtMS4yMS05LjI2LjA0LTEyLjc3LDQ1LjEtMTA3LjY1LDcyLjk3LTI2OC44NSw2NC4yMS0zODkuNzUtLjMtNS42MS0xLjM5LTE0LjEzLDIuNTQtMTguNTQsNS4xMS02LjA0LDE0LjctNS4xOSwyMS45Ni01LjU1LDExLjQ2LS4zNSwyMi45LS42OSwzNC4zNi0xLjA0LDcuOTQtLjE4LDE4LjIsMCwyMS44NS04LjUzLDIuMDctNC44MiwxLjM2LTExLjQ5Ljk1LTE2LjczLTEuNDItMjAuMzEtMi45LTQwLjY0LTQuMzUtNjAuOTgtLjMzLTQuOTMtLjg1LTEwLjI0LTMuMjMtMTQuNTYtMi44MS01LjUtOS40NS03LjE2LTE1LjI5LTYuNzEtODguMTIsMy4xMi0xNzYuNzcsNi4zMi0yNjQuNzIsMTEuOTEtMTEuNjUsMi40OS0xNS4yNiwxNC4yOC0xNS4wOSwyNC44Ni0yLjc3LDUwLjYsNDIuMjIsOTAuODMsOTEuNTEsODQuNjksMTYuMTctMy4xLDEyLjA2LDEzLjg4LDEyLjc1LDI0LjIuMjUsMzQuNjYtMS4xOCw2OC4yNC00LjQ0LDEwMy4yNC0xNy40MiwxNDMuODgtMzcuMjYsMzA2LjEtMTM2LjE4LDQxNC42OS0xMzQuMTEsMTM2LjE4LTM0OC44NSwxNTcuMTgtNTI2LjE0LDk1LjMyLTE4My4wNi02MC4zMS0zNDYuMjMtMjMzLjA0LTM4OC41OS00NDAuMTctNTAuNzktMTkyLjkzLDM0LjI1LTI1NC43NywyMjAuMzQtMjIxLjkzLDUuOTMuMDksMTAuNzgtLjM0LDE1LjgzLTEuODgsMzAuMzgtOS4wNSw1MS42My02MS42MywyMS45LTgxLjMtMzAuMDMtMTguOTctNzMuNjctMTYuMy0xMDcuOTctMTkuMTItODUuMDktMS44OC0xNTguNjYtMS42OC0yNjAuMDYsOC45Ny05LjQsMS40NC0xNC44MSw3LjktMTUuODIsMTYuNi01OS4xNiwzMzMuNzUsMTUyLjYyLDYzMy40LDM3Ny40Myw4MDAuMzdsLS4wMi4wN1oiLz4KICA8cGF0aCBkPSJNNjcwLjk2LDY4My42YzEuMDgtLjUzLDEuOS0xLjg4LDIuNjctMy44Ny45Ny0yLjUzLDEuODQtNi4yNSwyLjUyLTkuMjgsNy43LTM2Ljk1LDI3LjY1LTcyLjk2LDYxLjgyLTkwLjY3LDYuOTQtMy44NSwxNS4xNC03LjY4LDIzLjM5LTExLjMzLDMwLjM3LTEzLjAxLDYyLjU2LTI3LjU2LDkyLjAyLTQyLjk2LDg1Ljk0LTQxLjc5LDEzNy4yMi05NS43MywxNDEuMTItMTkyLjU4LjE0LTQuODgtLjYtMTMuMzgtNi43LTYuMTctOC4zMiwxMC41Ny0xNS42MywyMS4zMy0yNC44MiwzMS41Mi00NS4xMyw1NC42OC0xMDYuMTUsODEuNjQtMTcxLjE2LDExMS43LTE5LjA2LDguOTctMzcuOTgsMTcuNDQtNTcuMDUsMjYuMzgtMTguNzcsOC45MS0zOC4xOSwxNy42Ny01Mi44OSwzMi42NS0zNS43LDM1LjE0LTUxLjExLDg4LjE3LTI3LjgyLDEzNC43MywyLjY2LDQuNjEsMTAuNzksMjEuODgsMTYuODIsMTkuOTJsLjEtLjA1WiIvPgogIDxwYXRoIGQ9Ik02MDAuOSw2NTkuNDJjMi4zNS00LjQ5LTEuMDctMTEuNjEtMi4wNC0xNi40LTExLjI5LTM5LjQtOC4zMS04NS44OCwxOC45NS0xMTcuODksMTcuNC0yMS4yNSw0MC44LTM2LjMxLDYzLjc1LTUxLjA2LDQyLjkxLTI3LjM1LDg1LjU1LTUxLjUxLDEzMC40My03NC40Niw2Ny44OS0zNC41NSw5MC4zMi0zOS43OCwxMjkuMjItODQuNDMsMjEuMDEtMjMuNTYsMzcuNzQtNTEuMjIsNDguODUtODAuOTEsMTAuMTUtMjguODcsMTQuOTctNDkuNzksMTMuMTctNzAuNDItNy40Mi02NS45MS02NC45LTExMy40Ni0xMDEuNDgtMTM0LjcxLTk5Ljc2LTYwLjQ3LTIyOC43OS0xMy4xOC0yNzYuOTUsMTkuNzEtNDQuNzksMzYuMzYtNzAuODgsOTkuNzctNTguMDgsMTUzLjczLDMuODcsMTcuOTEsMTIuMzUsMzUuNjksMjMuNTQsNTAuOTUsMTQuNzUsMjEuMjUsMjkuNzMsMjkuMyw1OC4yNywzNi41Myw1LjU0LDEuMzUsMTEuNjYsMy43MiwxNy4wOCwzLjQ0LDQuNzItLjY4LTEuNDctNy4wNi0yLjg5LTkuMzQtMTguNDMtMjMuNDktMjYuNzktNTYuNTUtMTkuODctODYuMTEsNC4wOC0xOS41NywxMi41My0zNi44LDI3LjU3LTQ5LjcyLDMyLjY4LTI5LjA2LDgzLjgxLTMwLjc4LDEyMS05LjQ0LDE5Ljg3LDExLjAyLDM3LjcxLDI4LjY3LDQzLjI1LDUwLjg2LDguMDgsMzEuMDItMTEuNDgsNTkuMTQtMzEuNjQsODAuOS0yMy4zMSwyNS4xMi01My4zNiw1MS40Mi04Mi44OCw2Ni44Mi0zNS4zLDE5LjIzLTcxLjQ4LDI5LjItMTA1LjM5LDUyLjE2LTQ1LjQ0LDMyLjgyLTk3LjI0LDg0LjYtMTAxLjYyLDE0Ni40MS0xLjQ2LDMxLjAyLDExLjAxLDYyLjg0LDI5Ljg2LDg2LjUyLDEwLjI5LDEyLjMyLDIzLjM1LDIyLjM3LDM3LjIyLDMwLjc3LDQuMzYsMi4zOSwxNi42MSwxMC41MywyMC41OSw2LjJsLjA3LS4xWiIvPgogIDxwYXRoIGQ9Ik0yMzQuOTUsMTEyNi41MmMtOS43MiwxLjYyLDI5LjE5LDU2LjQzLDM1LDYzLjY2LDI2LjgsMzUuMTksNzQuNjIsODkuMzQsMTIwLjIzLDUxLjczLDIwLjA0LTE4Ljk4LDIzLjk5LTQ4Ljc3LDI2LjcxLTc0Ljk1LDcuMTQtNzguNDYtMjYuMjYtMTM1LjczLTg3LjQzLTE4Mi4wMy0yMy4yMS0xOC45Mi00Ni44LTM0LjIzLTQ1LjA0LTY3LjY3LDEuMTctMTkuMzcsMTYuNzEtMjkuODgsMzUuMTMtMzAuNjksMjIuMzItMS45Myw0OS4xMiw5LjgyLDY3LjM4LTMuNTEsMTUuODUtMTIuMiwxNi4xMi0zNS43OSwxNy44My01NC40OCw1LjQ4LTQ4LjE2LTQ2LjQ3LTQxLjA2LTc4Ljk3LTQyLjQ1LTQzLjU3LS43My03NS4yNC02LjQ1LTExMy43NCwyMC4wNy04Mi43Myw1Ny4wOC0zNS41OSwxNzYuMzEsNDMuODgsMjM5LjIyLDIxLjg2LDE3LjY5LDQzLjQ2LDM4LjUyLDQ3Ljc1LDY3LjQ3LDEuMzQsMTAuMjkuNTMsMjIuNjMtNi43NSwzMC42NS03Ljc4LDguNy0yMC45NCw3Ljk2LTMwLjY0LDIuOTktNy44My0zLjcxLTE0LjY4LTkuMDYtMjAuNzctMTMuNjYtMi44OS0yLjA0LTcuNjMtNi4wNS0xMC40Ni02LjM1aC0uMTFaIi8+CiAgPHBhdGggZD0iTTYyOC4yMiw5NDcuMzFjLTguNjIsOC4wNS0yMS41Niw2LjkzLTMyLjYzLDcuNTMtMTkuOS45MS0zNS44Mi0uOTYtMzkuNzctMTcuNjktNS44LTgyLjkxLTEuOTQtMTY2Ljc5LTYuMzItMjQ5LjkuNTMtMjYuOTktMjUuNDgtMjcuNjctNDYuMTMtMjcuMjUtMzkuNi0yLjAzLTU5LjM4LTMuMzYtNTYuMjksMzkuNDcsMS4yMSwyMDAuNzEtNS44MSw0MDEuOTYtLjA3LDYwMi40NCwxLjg3LDkuNTUsNS45MSwxNy45NywxMi45OSwyNC4yMiwxMi44OCwxMS4yNiwzMC41MiwxNC4wMiw0Ni42MywxOC43MywxMy41OCw0LjAyLDMyLjU0LDkuNjEsMzguNTItLjU1LDMuMTYtNC4xMyw0LjI5LTEyLjI1LDQuNDItMTcuOSwyLjMzLTc3LjEyLDEuNzgtMTU0LjU3LDUuNDItMjMxLjYyLjQtMjMuNjMsMjAuODMtMjYuMjYsNDAuODUtMjUuODIsMTMuMjQtLjU5LDMwLjk2LS41LDM1LjQzLDE1LjAyLDcuNjQsODguODgsMi45MywxNzkuMTQsNy40MywyNjguMzctLjUyLDE4LjI5LDkuNjIsMzMuODMsMjguNzEsMzYuMSw5LjY5LDEuNjYsMTkuOSwxLDI5LjcxLjEsMTQuMjEtMS4xNSwyOS4zMi0uOTEsMzcuMDYtMTMuNDEsMTQuNTEtMTk5LjgsNS4xLTQwMy45NSwxMS41NS02MDUuMTEuOTEtMTEuMDYtMS45NS0yNi41Ny0xMi4xMS0zMC41OS0xMi4zNi01Ljk1LTMyLjYxLTMuMjctNDcuNS00LjAxLTE3LjQ4LS4yMy0zOS4zNy0yLjQ3LTQ0Ljg1LDE2LjA2LTYuMDksNTguMTItMi40MSwxMTcuMjEtNS42NSwxNzUuNi0uNSw3LTIuMTksMTUuMTgtNy4yNywyMC4wOGwtLjEzLjEzWiIvPgogIDxwYXRoIGQ9Ik0xMDc5LjQxLDc5MC4zMWMtMjQuNTQtNjEuNzYtODIuMjItMTI5LjQ4LTE1NS43Ni0xMTcuMzgtNzMuMTEsMTQuODYtMTA1LjczLDkwLjQ2LTEyNy4yNCwxNTYuNDItMzQuNiwxMTUuMjYtMzUuNywyNjYuODEsMi45MSwzNzguNDcsMTIuNiwzNS4zMiwzMS4xNiw3Mi45Myw1OC43Miw5Ny40OCw0OC4yMSw0NS4zMiwxMTguOTQsMzEuNzcsMTYxLjg5LTEzLjIyLDQxLjY5LTQyLjE3LDY2LjIzLTEwMy42Miw3OS40OS0xNjEuNTUsMjMuNzItMTEwLjIxLDIxLjktMjM1LjYxLTE5LjkzLTM0MC4wNWwtLjA3LS4xOFpNOTk2LjEzLDExMDQuMDFjLTMuMjMsMzUuNjMtMTIuOTcsMTMwLjcyLTYwLjk4LDExOS4yOS0yMC42OS05LTMwLjQtMzEuOTgtMzYuNTktNTMuNzMtMTcuNy03Ni42MS0xMi41OS0xNTQuNDMtOS43Ni0yMzIuMDksMi41Mi0zMS42NCw1LjA2LTY0LjcyLDE2LjM4LTk0LjY5LDcuMzctMjEuMjMsMjguOTUtNTUuMjYsNTMuNzktNDEuOTcsMzYuMzUsMjIuMywzOC4xNyw4OC4yMSw0MC43NSwxMjcuODgsMi4zOCw1OC4zNywxLjE3LDExNi45NS0zLjU4LDE3NS4xNHYuMTdaIi8+Cjwvc3ZnPg==" alt="2Shot Caffee Logo">
+  </div>
+
+  <!-- Brand -->
+  <div class="brand-name">2SHOT</div>
+  <div class="brand-sub">Coffee &amp; Bar</div>
+
+  <!-- Divider -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-diamond"></div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- Links -->
+  <div class="links">
+
+    <!-- Instagram -->
+    <a href="https://instagram.com/2shot" target="_blank" class="link-card">
+      <div class="link-left">
+        <span class="link-title">Instagram</span>
+        <span class="link-desc">Daily photos, drinks &amp; latest offers</span>
+      </div>
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- TikTok -->
+    <a href="https://tiktok.com/@2shot" target="_blank" class="link-card">
+      <div class="link-left">
+        <span class="link-title">TikTok</span>
+        <span class="link-desc">Behind the scenes &amp; new drinks in action</span>
+      </div>
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.73a4.85 4.85 0 01-1.01-.04z"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://facebook.com/2shot" target="_blank" class="link-card">
+      <div class="link-left">
+        <span class="link-title">Facebook</span>
+        <span class="link-desc">News, offers &amp; special events</span>
+      </div>
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- Location -->
+    <a href="https://maps.google.com/?q=2Shot+Caffee" target="_blank" class="link-card">
+      <div class="link-left">
+        <span class="link-title">Location</span>
+        <span class="link-desc">Find us &amp; get directions easily</span>
+      </div>
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path>
+        </svg>
+      </span>
+    </a>
+
+    <!-- Menu -->
+    <a href="https://2shot.github.io/menu" target="_blank" class="link-card">
+      <div class="link-left">
+        <span class="link-title">Menu</span>
+        <span class="link-desc">Explore our full drinks &amp; desserts menu</span>
+      </div>
+      <span class="link-icon">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z"></path>
+        </svg>
+      </span>
+    </a>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="footer-text">2SHOT CAFFEE · ALL RIGHTS RESERVED</div>
+  </div>
+
+</div>
+
+
+</body></html>
