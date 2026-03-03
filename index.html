@@ -92,28 +92,35 @@
 ```css
 .logo-container {
   display: flex;
-  justify-content: flex-start; /* يخليهم ناحية الشمال */
+  flex-direction: row;        /* نفس الصف */
+  justify-content: flex-start; 
   align-items: center;
-  gap: 10px; /* مسافة بين اللوجوهين */
+  gap: 20px;                  /* مسافة بينهم */
   margin: 0 auto;
   padding: 20px 0 10px;
 }
 
 .logo-container svg {
-  width: min(200px, 50vw); /* اللوجو الأساسي */
+  width: min(200px, 50vw);    /* اللوجو الأساسي */
   height: auto;
-}
-
-.coffee-bar-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
 }
 
 .coffee-bar-logo {
-  width: min(150px, 30vw); /* أصغر من الأساسي */
+  width: min(120px, 30vw);    /* أصغر شوية */
   height: auto;
   filter: brightness(0) invert(1);
+  margin: 0;                  /* نشيل أي margin يخليه ينزل تحت */
+  display: block;
+}
+
+.coffee-bar-sub {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(10px, 2vw, 13px);
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.9;
+  margin: 0;
 }
 
 .coffee-bar-sub {
