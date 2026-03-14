@@ -40,6 +40,11 @@ def parse_data(rows):
         if not name_ar or not price:
             continue
         entry = {'ar': name_ar, 'en': name_en, 'p': int(price)}
+        price_m = row.get('price_m', '').strip()
+        price_l = row.get('price_l', '').strip()
+        if price_m and price_l:
+            entry['pm'] = int(price_m)
+            entry['pl'] = int(price_l)
         if seasonal == '1':
             entry['b'] = 1
         if rtype == 'addon':
@@ -59,6 +64,8 @@ def build_cats_js(cats, cat_order):
             s = re.sub(r'"en":', 'en:', s)
             s = re.sub(r'"p":', 'p:', s)
             s = re.sub(r'"b":', 'b:', s)
+            s = re.sub(r'"pm":', 'pm:', s)
+            s = re.sub(r'"pl":', 'pl:', s)
             return s
         lines.append(
             f'  {cid}:{{icon:"{c["icon"]}",ar:"{c["ar"]}",en:"{c["en"]}",\n'
